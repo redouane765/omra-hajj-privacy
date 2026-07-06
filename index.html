@@ -1,203 +1,299 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>سياسة الخصوصية — العمرة والحج</title>
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@300;400;700&display=swap" rel="stylesheet">
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      background: linear-gradient(160deg,#0a1f10 0%,#0d2a18 60%,#0a1f10 100%);
-      min-height: 100vh;
-      font-family: 'Tajawal', sans-serif;
-      color: #e8dfc8;
-      padding: 24px 16px 48px;
-    }
-    .modal {
-      max-width: 680px;
-      margin: 0 auto;
-      background: linear-gradient(160deg,#0a1f10 0%,#0d2a18 60%,#0a1f10 100%);
-      border: 1.5px solid rgba(201,151,58,0.35);
-      border-radius: 22px;
-      overflow: hidden;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.7);
-    }
-    /* رأس الصفحة */
-    .header {
-      background: linear-gradient(135deg,#0a1f10,#143d22);
-      border-bottom: 1.5px solid rgba(201,151,58,0.28);
-      padding: 28px 20px 22px;
-      text-align: center;
-    }
-    .header-icon { font-size: 2.8rem; filter: drop-shadow(0 0 16px rgba(201,151,58,0.5)); margin-bottom: 12px; }
-    .header-title { font-family: 'Amiri', serif; font-size: 1.6rem; color: #e8c46a; margin-bottom: 4px; }
-    .header-sub { font-size: 0.9rem; color: #a89878; font-weight: 300; }
-    .header-divider { width: 100px; height: 1px; background: linear-gradient(90deg,transparent,#c9973a,transparent); margin: 14px auto 0; }
-    .header-date {
-      display: inline-flex; align-items: center; gap: 6px;
-      background: rgba(201,151,58,0.14); border: 1px solid rgba(201,151,58,0.25);
-      border-radius: 25px; padding: 5px 16px;
-      font-size: 0.78rem; color: #e8c46a; margin-top: 14px;
-    }
-    /* البطاقات */
-    .content { padding: 20px 18px 24px; }
-    .pp-card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(201,151,58,0.2);
-      border-radius: 16px;
-      padding: 20px 18px;
-      margin-bottom: 12px;
-    }
-    .pp-card-hd { display: flex; align-items: center; gap: 11px; margin-bottom: 11px; }
-    .pp-icon {
-      width: 38px; height: 38px;
-      background: rgba(201,151,58,0.14);
-      border: 1px solid rgba(201,151,58,0.25);
-      border-radius: 9px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.1rem; flex-shrink: 0;
-    }
-    .pp-title { font-family: 'Amiri', serif; font-size: 1.08rem; color: #e8c46a; font-weight: 700; }
-    .pp-card p { font-size: 0.9rem; line-height: 1.9; color: #e8dfc8; font-weight: 300; }
-    .pp-no-collect { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin-top: 12px; }
-    .pp-nc-item {
-      display: flex; align-items: center; gap: 7px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(201,151,58,0.1);
-      border-radius: 9px; padding: 7px 11px;
-      font-size: 0.82rem; color: #a89878;
-    }
-    .pp-nc-item::before { content: '✕'; color: #e05555; font-size: 0.72rem; flex-shrink: 0; }
-    .pp-badge {
-      display: inline-flex; align-items: center; gap: 6px;
-      border-radius: 8px; padding: 5px 13px; font-size: 0.8rem;
-    }
-    .pp-badge-green { background: rgba(46,160,67,0.15); border: 1px solid rgba(46,160,67,0.3); color: #5fca78; }
-    .pp-badge-gold { background: rgba(201,151,58,0.12); border: 1px solid rgba(201,151,58,0.25); color: #e8c46a; }
-    .pp-audio-box {
-      margin-top: 14px; padding: 13px 15px;
-      background: rgba(201,151,58,0.07);
-      border: 1px solid rgba(201,151,58,0.22);
-      border-radius: 11px;
-      font-size: 0.88rem; line-height: 1.95; color: #e8dfc8; font-weight: 300;
-    }
-    /* التذييل */
-    .footer {
-      text-align: center;
-      padding-top: 16px;
-      border-top: 1px solid rgba(201,151,58,0.2);
-      margin-top: 4px;
-    }
-    .footer p { font-size: 0.82rem; color: #a89878; margin-bottom: 12px; }
-    .footer a {
-      display: inline-flex; align-items: center; gap: 7px;
-      color: #e8c46a; text-decoration: none;
-      font-size: 0.88rem; padding: 9px 20px;
-      border: 1px solid rgba(201,151,58,0.3);
-      border-radius: 25px;
-      background: rgba(201,151,58,0.1);
-    }
-    .footer-copy { font-size: 0.75rem; color: #a89878; margin-top: 14px; }
-    @media(max-width:480px) { .pp-no-collect { grid-template-columns: 1fr; } }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>سياسة الخصوصية — العمرة والحج</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 400;
+    background: #0a1f12;
+    color: #e8f0e9;
+    min-height: 100vh;
+    padding: 0 0 40px;
+  }
+  .header {
+    background: linear-gradient(160deg, #0a1f12 0%, #0d2a18 60%, #1a4d2e 100%);
+    border-bottom: 2px solid rgba(201,151,58,0.4);
+    text-align: center;
+    padding: 40px 20px 30px;
+  }
+  .header-icon { font-size: 3.5rem; margin-bottom: 12px; }
+  .header-title {
+    font-family: 'Amiri', serif;
+    font-size: 2rem;
+    color: #e8c46a;
+    margin-bottom: 6px;
+  }
+  .header-app {
+    font-size: 1rem;
+    color: #a89878;
+    font-weight: 300;
+    margin-bottom: 16px;
+  }
+  .header-divider {
+    width: 100px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #c9973a, transparent);
+    margin: 0 auto 16px;
+  }
+  .header-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(201,151,58,0.14);
+    border: 1px solid rgba(201,151,58,0.25);
+    border-radius: 25px;
+    padding: 6px 18px;
+    font-size: 0.85rem;
+    color: #e8c46a;
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 30px 20px;
+  }
+  .card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(201,151,58,0.2);
+    border-radius: 14px;
+    padding: 20px 22px;
+    margin-bottom: 16px;
+  }
+  .card-highlight {
+    border-color: rgba(201,151,58,0.38);
+    background: rgba(201,151,58,0.05);
+  }
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+  .card-icon { font-size: 1.4rem; }
+  .card-title {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #e8c46a;
+  }
+  .card p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #c8d8c8;
+  }
+  .audio-box {
+    background: rgba(201,151,58,0.07);
+    border: 1px solid rgba(201,151,58,0.22);
+    border-radius: 10px;
+    padding: 14px 16px;
+    font-size: 0.88rem;
+    line-height: 1.85;
+    color: #c8d8c8;
+    margin-top: 12px;
+  }
+  .badges {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 14px;
+  }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    border-radius: 20px;
+    padding: 5px 13px;
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+  .badge-green {
+    background: rgba(39,201,101,0.12);
+    border: 1px solid rgba(39,201,101,0.3);
+    color: #27c965;
+  }
+  .badge-gold {
+    background: rgba(201,151,58,0.12);
+    border: 1px solid rgba(201,151,58,0.3);
+    color: #e8c46a;
+  }
+  .no-collect {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 12px;
+  }
+  .no-collect-item {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    color: #a89878;
+    text-align: center;
+  }
+  .footer {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(201,151,58,0.2);
+    margin-top: 8px;
+  }
+  .footer p {
+    font-size: 0.85rem;
+    color: #a89878;
+    margin-bottom: 14px;
+  }
+  .email-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: #e8c46a;
+    text-decoration: none;
+    font-size: 0.92rem;
+    padding: 10px 22px;
+    border: 1px solid rgba(201,151,58,0.3);
+    border-radius: 25px;
+    background: rgba(201,151,58,0.1);
+    transition: background 0.2s;
+  }
+  .email-link:hover { background: rgba(201,151,58,0.2); }
+  .copyright {
+    font-size: 0.78rem;
+    color: #a89878;
+    margin-top: 16px;
+  }
+  strong { color: #e8c46a; }
+  @media (max-width: 480px) {
+    .no-collect { grid-template-columns: 1fr; }
+    .header-title { font-size: 1.6rem; }
+  }
+</style>
 </head>
 <body>
-  <div class="modal">
 
-    <!-- رأس الصفحة -->
-    <div class="header">
-      <div class="header-icon">🕋</div>
-      <div class="header-title">سياسة الخصوصية</div>
-      <div class="header-sub">العمرة والحج</div>
-      <div class="header-divider"></div>
-      <div class="header-date">📅 آخر تحديث: 2 يوليو 2026 — الإصدار 1.0</div>
+<div class="header">
+  <div class="header-icon">🕋</div>
+  <div class="header-title">سياسة الخصوصية</div>
+  <div class="header-app">العمرة والحج</div>
+  <div class="header-divider"></div>
+  <div class="header-badge">📅 آخر تحديث: 6 يوليو 2026 — الإصدار 1.0</div>
+</div>
+
+<div class="container">
+
+  <!-- مقدمة -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon">🛡️</div>
+      <div class="card-title">مقدمة</div>
     </div>
+    <p>يلتزم تطبيق <strong>العمرة والحج</strong> بحماية خصوصية مستخدميه. توضّح هذه السياسة كيفية التعامل مع بياناتك عند استخدام التطبيق.</p>
+  </div>
 
-    <!-- المحتوى -->
-    <div class="content">
+  <!-- حقوق الصوت -->
+  <div class="card card-highlight">
+    <div class="card-header">
+      <div class="card-icon">🎙️</div>
+      <div class="card-title">الاعتراف بحقوق المحتوى الصوتي</div>
+    </div>
+    <p>يتضمّن التطبيق تسجيلات صوتية للشيخ الفاضل <strong>علاء عقل</strong>، وهي تسجيلات تعود حقوق ملكيتها وتوزيعها إلى <strong>شركة روافد ميديا</strong> في منطقة الشرق الأوسط وآسيا.</p>
+    <div class="audio-box">
+      يُقرّ مطوّر هذا التطبيق بأن استخدام هذه التسجيلات الصوتية يندرج ضمن نطاق العمل الخيري غير التجاري، الهادف إلى تيسير أداء شعائر الحج والعمرة على المسلمين في شتّى أنحاء العالم. وقد أُدرج هذا المحتوى بنيّة حسنة وإيماناً بأن نشر العلم الديني النافع من أعظم القربات.
+      <br><br>
+      نُعرب عن خالص امتناننا لفضيلة الشيخ <strong>علاء عقل</strong> ولشركة <strong>روافد ميديا</strong> على جهودها في خدمة المحتوى الإسلامي وإتاحته.
+      <br><br>
+      وفي حال رأت الجهات المعنية ضرورة التواصل بشأن هذا المحتوى أو طلب تعديله أو إزالته، فإننا نُرحّب بذلك ونلتزم بالاستجابة الفورية.
+    </div>
+    <div class="badges">
+      <span class="badge badge-green">✅ عمل خيري غير تجاري</span>
+      <span class="badge badge-gold">🎙️ روافد ميديا — الشرق الأوسط وآسيا</span>
+    </div>
+  </div>
 
-      <!-- مقدمة -->
-      <div class="pp-card">
-        <div class="pp-card-hd"><div class="pp-icon">🛡️</div><div class="pp-title">مقدمة</div></div>
-        <p>يلتزم تطبيق <strong style="color:#e8c46a">العمرة والحج</strong> بحماية خصوصية مستخدميه. توضّح هذه السياسة كيفية التعامل مع بياناتك عند استخدام التطبيق.</p>
-      </div>
+  <!-- جمع البيانات -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon">🚫</div>
+      <div class="card-title">جمع البيانات</div>
+    </div>
+    <p>تطبيقنا لا يجمع أي بيانات شخصية من المستخدمين. نحن لا نطلب ولا نخزن:</p>
+    <div class="no-collect">
+      <div class="no-collect-item">الاسم أو معلومات الهوية</div>
+      <div class="no-collect-item">عنوان البريد الإلكتروني</div>
+      <div class="no-collect-item">رقم الهاتف</div>
+      <div class="no-collect-item">الموقع الجغرافي</div>
+      <div class="no-collect-item">أي معلومات شخصية أخرى</div>
+    </div>
+  </div>
 
-      <!-- حقوق الصوت -->
-      <div class="pp-card" style="border-color:rgba(201,151,58,0.38);background:rgba(201,151,58,0.05);">
-        <div class="pp-card-hd"><div class="pp-icon">🎙️</div><div class="pp-title">الاعتراف بحقوق المحتوى الصوتي</div></div>
-        <p>يتضمّن التطبيق تسجيلات صوتية للشيخ الفاضل <strong style="color:#e8c46a">علاء عقل</strong>، وهي تسجيلات تعود حقوق ملكيتها وتوزيعها إلى <strong style="color:#e8c46a">شركة روافد ميديا</strong> في منطقة الشرق الأوسط وآسيا.</p>
-        <div class="pp-audio-box">
-          يُقرّ مطوّر هذا التطبيق بأن استخدام هذه التسجيلات الصوتية يندرج ضمن نطاق العمل الخيري غير التجاري، الهادف إلى تيسير أداء شعائر الحج والعمرة على المسلمين في شتّى أنحاء العالم. وقد أُدرج هذا المحتوى بنيّة حسنة وإيماناً بأن نشر العلم الديني النافع من أعظم القربات.
-          <br><br>
-          نُعرب عن خالص امتناننا لفضيلة الشيخ <strong style="color:#e8c46a">علاء عقل</strong> ولشركة <strong style="color:#e8c46a">روافد ميديا</strong> على جهودها في خدمة المحتوى الإسلامي وإتاحته.
-          <br><br>
-          وفي حال رأت الجهات المعنية ضرورة التواصل بشأن هذا المحتوى أو طلب تعديله أو إزالته، فإننا نُرحّب بذلك ونلتزم بالاستجابة الفورية.
-        </div>
-        <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;">
-          <span class="pp-badge pp-badge-green">✅ عمل خيري غير تجاري</span>
-          <span class="pp-badge pp-badge-gold">🎙️ روافد ميديا — الشرق الأوسط وآسيا</span>
-        </div>
-      </div>
+  <!-- الاتصال بالإنترنت -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon">📵</div>
+      <div class="card-title">الاتصال بالإنترنت</div>
+    </div>
+    <p>التطبيق يعمل بشكل كامل بدون اتصال بالإنترنت. لا يتم إرسال أي بيانات إلى خوادم خارجية.</p>
+    <div class="badges">
+      <span class="badge badge-green">✅ يعمل بالكامل Offline</span>
+    </div>
+  </div>
 
-      <!-- جمع البيانات -->
-      <div class="pp-card">
-        <div class="pp-card-hd"><div class="pp-icon">🚫</div><div class="pp-title">جمع البيانات</div></div>
-        <p>تطبيقنا لا يجمع أي بيانات شخصية من المستخدمين. نحن لا نطلب ولا نخزن:</p>
-        <div class="pp-no-collect">
-          <div class="pp-nc-item">الاسم أو معلومات الهوية</div>
-          <div class="pp-nc-item">عنوان البريد الإلكتروني</div>
-          <div class="pp-nc-item">رقم الهاتف</div>
-          <div class="pp-nc-item">الموقع الجغرافي</div>
-          <div class="pp-nc-item">أي معلومات شخصية أخرى</div>
-        </div>
-      </div>
+  <!-- الصلاحيات -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon">🔐</div>
+      <div class="card-title">الصلاحيات المطلوبة</div>
+    </div>
+    <p>التطبيق لا يطلب أي صلاحيات خاصة على جهازك. جميع المحتويات من نصوص وإرشادات متوفرة مباشرة داخل التطبيق دون الحاجة للوصول إلى أي مورد على جهازك.</p>
+  </div>
 
-      <!-- الاتصال بالإنترنت -->
-      <div class="pp-card">
-        <div class="pp-card-hd"><div class="pp-icon">📵</div><div class="pp-title">الاتصال بالإنترنت</div></div>
-        <p>التطبيق يعمل بشكل كامل بدون اتصال بالإنترنت. لا يتم إرسال أي بيانات إلى خوادم خارجية.</p>
-        <div style="margin-top:10px;" class="pp-badge pp-badge-green">✅ &nbsp;يعمل بالكامل Offline</div>
-      </div>
+  <!-- أطراف ثالثة -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon">🤝</div>
+      <div class="card-title">مشاركة البيانات مع أطراف ثالثة</div>
+    </div>
+    <p>نظرًا لأننا لا نجمع أي بيانات، فلا يوجد ما يُشارَك مع أي طرف ثالث، ولا نستخدم أي أدوات تحليل أو تتبع.</p>
+  </div>
 
-      <!-- الصلاحيات -->
-      <div class="pp-card">
-        <div class="pp-card-hd"><div class="pp-icon">🔐</div><div class="pp-title">الصلاحيات المطلوبة</div></div>
-        <p>التطبيق لا يطلب أي صلاحيات خاصة على جهازك. جميع المحتويات من نصوص وإرشادات متوفرة مباشرة داخل التطبيق دون الحاجة للوصول إلى أي مورد على جهازك.</p>
-      </div>
+  <!-- أمان البيانات -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon">🔒</div>
+      <div class="card-title">أمان البيانات</div>
+    </div>
+    <p>حيث إن التطبيق لا يجمع أي بيانات شخصية ولا يتصل بأي خادم خارجي، فإن خصوصيتك محمية بالكامل بطبيعة تصميم التطبيق.</p>
+  </div>
 
-      <!-- أطراف ثالثة -->
-      <div class="pp-card">
-        <div class="pp-card-hd"><div class="pp-icon">🤝</div><div class="pp-title">مشاركة البيانات مع أطراف ثالثة</div></div>
-        <p>نظرًا لأننا لا نجمع أي بيانات، فلا يوجد ما يُشارَك مع أي طرف ثالث، ولا نستخدم أي أدوات تحليل أو تتبع.</p>
-      </div>
+  <!-- خصوصية الأطفال -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon">👶</div>
+      <div class="card-title">خصوصية الأطفال</div>
+    </div>
+    <p>تطبيقنا مناسب لجميع الفئات العمرية ولا يجمع أي بيانات من أي مستخدم، بمن فيهم الأطفال دون سن 13 عامًا.</p>
+  </div>
 
-      <!-- أمان البيانات -->
-      <div class="pp-card">
-        <div class="pp-card-hd"><div class="pp-icon">🔒</div><div class="pp-title">أمان البيانات</div></div>
-        <p>حيث إن التطبيق لا يجمع أي بيانات شخصية ولا يتصل بأي خادم خارجي، فإن خصوصيتك محمية بالكامل بطبيعة تصميم التطبيق.</p>
-      </div>
+  <!-- التغييرات -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon">🔄</div>
+      <div class="card-title">التغييرات على هذه السياسة</div>
+    </div>
+    <p>قد نقوم بتحديث سياسة الخصوصية هذه من وقت لآخر. سيتم نشر أي تغييرات في هذه الصفحة مع تحديث التاريخ في الأعلى.</p>
+  </div>
 
-      <!-- خصوصية الأطفال -->
-      <div class="pp-card">
-        <div class="pp-card-hd"><div class="pp-icon">👶</div><div class="pp-title">خصوصية الأطفال</div></div>
-        <p>تطبيقنا مناسب لجميع الفئات العمرية ولا يجمع أي بيانات من أي مستخدم، بمن فيهم الأطفال دون سن 13 عامًا.</p>
-      </div>
+  <!-- تذييل -->
+  <div class="footer">
+    <p>للتواصل بخصوص سياسة الخصوصية:</p>
+    <a href="mailto:redouz.111@gmail.com" class="email-link">
+      📧 redouz.111@gmail.com
+    </a>
+    <p class="copyright">© 2026 تطبيق العمرة والحج — جميع الحقوق محفوظة</p>
+  </div>
 
-      <!-- التغييرات -->
-      <div class="pp-card">
-        <div class="pp-card-hd"><div class="pp-icon">🔄</div><div class="pp-title">التغييرات على هذه السياسة</div></div>
-        <p>قد نقوم بتحديث سياسة الخصوصية هذه من وقت لآخر. سيتم نشر أي تغييرات على هذه الصفحة مع تحديث التاريخ في الأعلى.</p>
-      </div>
-
-      <!-- التذييل -->
-      <div class="footer">
-        <p>للتواصل بخصوص سياسة الخصوصية:</p>
-        <a href="mailto:redouz.111@gmail.com">📧 redouz.111@gmail.com</a>
-        <p class="footer-copy">© 2026 تطبيق العمرة والحج — جميع الحقوق محفوظة</p>
-      </div>
-
-    </div><!-- /content -->
-  </div><!-- /modal -->
+</div>
 </body>
 </html>
